@@ -1,0 +1,28 @@
+pre-push:
+  parallel: true
+  commands:
+    gems-audit:
+      tags: backend security
+      run: bundle audit
+    packages-audit:
+      tags: frontend security
+      run: yarn audit
+
+pre-commit:
+  parallel: true
+  commands:
+    rspec:
+      tags: rspec backend
+      run: bundle exec rspec --fail-fast
+    standardrb:
+      tags: standard backend
+      run: bundle exec standardrb
+    brakeman:
+      tags: brakeman backend
+      run: bundle exec brakeman --no-pager
+    zeitwerk:
+      tags: zeitwerk backend
+      run: bundle exec rails zeitwerk:check
+    erb-lint:
+      tags: erb-lint frontend
+      run: bundle exec erblint --lint-all
