@@ -16,6 +16,11 @@ gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
+gem "bootstrap_form"
+
+### Authentication
+gem "devise"
+gem "devise-i18n"
 
 ### I18n
 gem "i18n-tasks"
