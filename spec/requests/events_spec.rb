@@ -17,11 +17,11 @@ RSpec.describe "/events", type: :request do
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: "test", description: "some description", event_date: Date.tomorrow, location: "somewhere over the rainbow", organizer_id: FactoryBot.create(:organizer).id}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: "", description: "some description", event_date: Date.tomorrow, location: "somewhere over the rainbow", organizer_id: nil}
   }
 
   describe "GET /index" do
@@ -86,14 +86,14 @@ RSpec.describe "/events", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "new test"}
       }
 
       it "updates the requested event" do
         event = Event.create! valid_attributes
         patch event_url(event), params: {event: new_attributes}
         event.reload
-        skip("Add assertions for updated state")
+        expect(event.name).to eq("new test")
       end
 
       it "redirects to the event" do

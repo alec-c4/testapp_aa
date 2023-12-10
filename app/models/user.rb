@@ -3,4 +3,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
 
   has_many :events, class_name: "Event", foreign_key: "organizer_id", dependent: :destroy
+
+  def to_s
+    email
+  end
 end
