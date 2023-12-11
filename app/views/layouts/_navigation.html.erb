@@ -9,6 +9,11 @@
         <li class="nav-item">
           <%= link_to "Events", events_path, class: "nav-link" %>
         </li>
+        <% if Rails.env.development? %>
+          <li class="nav-item">
+            <%= link_to "Letter opener", dev_letter_opener_web_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
 
       <ul class="navbar-nav ms-auto flex-nowrap">

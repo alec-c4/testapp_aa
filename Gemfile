@@ -30,6 +30,8 @@ gem "rails-i18n"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
+gem "image_processing", "~> 1.2"
+gem "rails_semantic_logger"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]

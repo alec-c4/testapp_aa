@@ -14,15 +14,15 @@ install:
 	@# Help: Install dependencies
 	@gem install foreman
 	@bundle install
-	@bun install
+	@yarn install
 update:
 	@# Help: Update dependencies
 	@bundle update
-	@bun update
+	@yarn upgrade
 audit:
 	@# Help: Run audit tasks
 	@bundle audit
-	@bun audit
+	@yarn audit
 clean:
 	@# Help: Clear dependencies
 	@bundle clean --force
