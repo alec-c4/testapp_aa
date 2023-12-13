@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby file: ".ruby-version"
+ruby "3.2.2"
 
 ### Application
 gem "rails", "~> 7.1.2"
@@ -58,3 +58,7 @@ group :development do
   gem "bundler-audit"
   gem "letter_opener_web", "~> 2.0"
 end
+
+gem "dockerfile-rails", ">= 1.5", group: :development
+
+gem "pg", "~> 1.5"
